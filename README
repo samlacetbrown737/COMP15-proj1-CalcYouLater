@@ -1,0 +1,82 @@
+/**********************************************************
+* Project 1: CalcYouLater
+* Comp 15
+* README
+* Sam Lacet-Brown
+* October 2020
+*********************************************************/
+ 
+Compile/run:
+     - Compile using
+            make CalcYouLater
+     - run executable with
+            ./CalcYouLater 
+
+
+Program Purpose:
+This program implements a Reverse Polish Notation calculator.
+It uses a stack to store Datum and uses postfix notation.
+
+
+Acknowledgements: 
+I used the dreamincode stringstream tutorial to understand how to get my input,
+and Matt's lab discussion to understand Makefiles.
+
+Files: 
+README: this file
+
+Makefile
+
+main.cpp:
+     Handles simple driver functions including testing, and
+     initalizing an instance of the RPN Calculator.
+
+DatumStack.cpp:
+     Implementation of DatumStack class. Handles the vector of Datum elements.
+
+DatumStack.h:
+        Interface of DatumStack class.
+
+testDatumStack.cpp:
+        A file that tests opening the RPNCalc and running an 
+        instance of the DatumStack. Pushs and pops all three types.
+
+RPNCalc.cpp:
+        Receives input from cin or files and interacts with the stack
+        to run commands, holds a DatumStack
+
+RPNCalc.h:
+        Interface of RPNCalc class.
+
+test.txt:
+        A sample list of commands to test the calculator's file input
+
+fib.cylc:
+    Test file that takes an int from the stack and computes the nth Fibbonaci
+
+fib_debug.cylc:
+    Test file that shows each step of fib.cylc
+
+fact.cylc:
+    Test file that takes an int from the stack and pushes the factorial of it
+
+testing.cpp:
+    File that includes all the tests which relied on private functions
+
+Data Structures:
+The primary data structure in this assignment was a stack
+which was implemented as a vector of Datum.
+
+Testing:
+I first tested my DatumStack within the testDatumStack file by initalizing
+a RPNCalc and running it's test function, which included pushing and popping
+all the types of Datum. Next, within main I tested the RString parser.
+After that, I tested printing of the top of the stack, and adding booleans.
+Then I tried the not function, the drop func and finally the clear function.
+I tested swap and dup, and then the operators and comparisions. Once
+all of the simple commands were implemented, I tested inputting them
+via cin. Next I checked the file command and that all the functions
+were still called properly from them. This proved tricky as my file
+refused to open at first, but I eventually figured out that
+it simply wasn't being called properly. Next, I tested exec and if, and
+finally the .cyl/.cycl files.
